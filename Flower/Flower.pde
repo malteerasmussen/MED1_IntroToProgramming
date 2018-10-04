@@ -1,21 +1,33 @@
-int r=60;
-float ballX;
-float ballY;
+//int r=100;
+
+flower myFlower = new flower();
 
 void setup() {
   size(600,400);
   background(#43AF76);
+  
 }
 
 void draw(){
 
-  fill(int(random(255)),int(random(255)),int(random(255)));
-  for (float i=0;i<PI*2;i+=2*PI/5) {
-  ballX=width/2 + r*cos(i);
-  ballY=height/2 + r*sin(i);
+  
+  myFlower.display(20,4,30,200,#5B981A);
+  myFlower.display(70,12,500,300,#FAD9F1);
+  
+}  
+
+class flower {
+ void display(float r, int n_Petals, float x, float y, int petalColor) {
+  noStroke();
+  float ballX;
+  float ballY;
+  fill(petalColor); //<>//
+  for (float i=0;i<PI*2;i+=2*PI/n_Petals) {
+  ballX=x + r*cos(i);
+  ballY=y + r*sin(i);
   ellipse(ballX,ballY,r,r); 
   }
   fill(200,0,0);
-  ellipse(width/2,height/2,r*1.2,r*1.2);
-}  
- 
+  ellipse(x,y,r*1.2,r*1.2);
+}
+}
