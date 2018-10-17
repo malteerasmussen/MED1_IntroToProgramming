@@ -1,33 +1,25 @@
 //int r=100;
 
-flower myFlower = new flower();
+flower myFlower1 = new flower(20,5,30,200,(#5B981A)/2);
+flower myFlower2 = new flower(50,10,200,150,#FFEA46);
+flower myFlower3 = new flower(40,12,500,300,#FAD9F1);
+
+
 
 void setup() {
   size(600,400);
-  background(#43AF76);
-  
+
 }
 
 void draw(){
-
-  
-  myFlower.display(20,4,30,200,#5B981A);
-  myFlower.display(70,12,500,300,#FAD9F1);
-  
+  background(#43AF76);
+  myFlower1.display();
+  myFlower2.display();
+  myFlower3.display();
+  myFlower1.move();
+  myFlower2.move();
+  myFlower3.move();
+  myFlower1.bounce();
+  myFlower2.bounce();
+  myFlower3.bounce();
 }  
-
-class flower {
- void display(float r, int n_Petals, float x, float y, int petalColor) {
-  noStroke();
-  float ballX;
-  float ballY;
-  fill(petalColor); //<>//
-  for (float i=0;i<PI*2;i+=2*PI/n_Petals) {
-  ballX=x + r*cos(i);
-  ballY=y + r*sin(i);
-  ellipse(ballX,ballY,r,r); 
-  }
-  fill(200,0,0);
-  ellipse(x,y,r*1.2,r*1.2);
-}
-}
