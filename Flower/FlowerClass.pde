@@ -25,7 +25,6 @@ class flower {
   ballX = x + r*cos(i);
   ballY = y + r*sin(i);
   ellipse(ballX,ballY,r,r); 
-  println(i);
   }
   fill(200,0,0);
   ellipse(x,y,r*1.2,r*1.2);
@@ -37,10 +36,10 @@ void move() {
 }
 
 void bounce() {
-  if (x>width-(r*1.2) || x<0+r){
+  if (x>width-(r*1.2) || x<0+(r*1.2)){
     speedX=speedX*-1;
   }
-  if (y>height-(r*1.2) || y<0+r){
+  if (y>height-(r*1.2) || y<0+(r*1.2)){
     speedY=speedY*-1;
 }
 
