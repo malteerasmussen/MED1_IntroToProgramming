@@ -13,13 +13,13 @@ class Object {
     noStroke();
     fill(255);
     rectMode(CENTER);
-    rect(x, y, r, r);
+    rect(mouseX, y, r, r);
 
     keyPressed();
   }
 
   //making cube move left or right when keys are pressed
-  void keyPressed() {
+ /* void keyPressed() {
     if (keyCode == RIGHT) {
       x+=xv;
     }
@@ -34,7 +34,7 @@ class Object {
       x=(width-(r/2));
     }
   }
-
+*/
   //method for making cube fly up when game starts
   void fly() {
     if (y>400) {

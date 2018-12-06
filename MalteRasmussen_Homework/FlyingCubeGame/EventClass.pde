@@ -11,7 +11,7 @@ class Event {
 
       //Checks for collision between Object and points
       if (myObject.y-(myObject.r/2) < pointsArray[i].y+(pointsArray[i].r/2) && myObject.y+(myObject.r/2) > pointsArray[i].y-(pointsArray[i].r/2)
-        && myObject.x-(myObject.r/2) < pointsArray[i].x+(pointsArray[i].r/2) && myObject.x+(myObject.r/2) > pointsArray[i].x-(pointsArray[i].r/2)) {
+        && mouseX-(myObject.r/2) < pointsArray[i].x+(pointsArray[i].r/2) && mouseX+(myObject.r/2) > pointsArray[i].x-(pointsArray[i].r/2)) {
         pointsArray[i].hit();
       }
       //sets an end time to use to determine survival time

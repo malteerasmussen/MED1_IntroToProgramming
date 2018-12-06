@@ -12,20 +12,21 @@ int endTime;
 int pVel;
 int pVelReset=6;
 int fullLife=3;
-int life=3;
+int life;
 
 //creating array for the point objects
 Points[] pointsArray = new Points[4];
 
 void setup() {
   size(700, 700);
-
-//calling a reset method for myObject to reset x an y positions
+  noCursor();
+  //calling a reset method for myObject to reset x an y positions
   myObject.reset();
   //making sure the ready boolean is set to false at beginning
   ready=false;
+  life=fullLife;
 
-//placing point objects into the pointsArray with varying positions
+  //placing point objects into the pointsArray with varying positions
   for (int i=0; i<pointsArray.length; i++) {
     pointsArray[i] = new Points(random(width), 200-(200*i));
   }
@@ -37,23 +38,23 @@ void draw() {
   // displaying the myObject at all times
   myObject.display();
 
-//if ready is true call event method: fly
+  //if ready is true call event method: fly
   if (ready) {
     myEvents.fly();
   }
-  
+
   //displays instruction to start whenever the game is not running
   if (!ready) {
     textAlign(CENTER);
     textSize(30);
     fill(100);
-    text("Press UP key to start",width/2,height-200);
+    text("Press the screen key to start", width/2, height-200);
   }
 
-//set time variable to count seconds from startup
+  //set time variable to count seconds from startup
   time=millis()/1000;
 
-//calls gameOver method for the Event object when all lives are lost
+  //calls gameOver method for the Event object when all lives are lost
   if (life==0) {
     myEvents.gameOver();
   }
@@ -61,8 +62,8 @@ void draw() {
 }
 
 //sets ready to true and resets variables when starting game
-void keyPressed() {
-  if (keyCode == UP && !ready) {
+void mousePressed() {
+  if (!ready) {
     ready = true;
     newTime=time;
     pVel=pVelReset;
