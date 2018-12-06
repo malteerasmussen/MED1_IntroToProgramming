@@ -1,8 +1,8 @@
 class Figure {
-
-  int x;
-  int y;
-  int r;
+  
+  float x;
+  float y;
+  float r;
 
   void display(float x, float y, float r) {
     float a = (r/4)*(sqrt(2));
